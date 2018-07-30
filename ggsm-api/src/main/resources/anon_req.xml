@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--配置不需要拦截的请求-->
+<urls>
+    <url></url>
+    <url></url>
+    <url></url>
+    <url></url>
+    <url></url>
+    <url></url>
+    <url></url>
+    <url></url>
+</urls>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="requestConfigBuilder" class="org.apache.http.client.config.RequestConfig.Builder">
+        <property name="connectTimeout" value="2000"/>
+        <property name="connectionRequestTimeout" value="500"/>
+        <property name="socketTimeout" value="6000"/>
+    </bean>
+    <bean id="requestConfig" class="org.apache.http.client.config.RequestConfig" factory-bean="requestConfigBuilder" factory-method="build"></bean>
+    <bean id="httpsConnection" class="net.dgg.framework.https.HttpTools">
+        <property name="charset" value="UTF-8"/>
+        <property name="requestConfig" ref="requestConfig"/>
+    </bean>
+</beans>
